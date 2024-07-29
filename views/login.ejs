@@ -1,19 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Log In</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1><%- title %></h1>
+    <p><%- typeof message !== undefined && message %></p>
     <form action="/login" method="POST">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required />
-        <button type="submit">Log In</button>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required />
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+      <button type="submit">Log In</button>
     </form>
     <p>Don't have an account? Click <a href="/signup">here</a> to sign up.</p>
-</body>
+  </body>
 </html>

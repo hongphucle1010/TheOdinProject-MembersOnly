@@ -3,14 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Members Only - The Odin Project</title>
+    <title>Clubhouse - The Odin Project</title>
   </head>
   <body>
     <h1><%- title %></h1>
-    <p>
-      <%- message %>
-    </p>
+    <p><%- message %></p>
+    <% if (user){ %>
+    <p>Welcome, <%- user.username %>!</p>
+    <p>Click <a href="/logout">here</a> to log out.</p>
+    <%} else{ %>
     <p>Click <a href="/login">here</a> to log in.</p>
     <p>Click <a href="/signup">here</a> to sign up.</p>
+    <% } %>
   </body>
 </html>

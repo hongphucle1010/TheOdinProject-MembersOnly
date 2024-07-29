@@ -3,10 +3,10 @@ const { Client } = require("pg");
 
 const SQL = `
 CREATE TABLE IF NOT EXISTS users (
-    id SERIAL PRIMARY KEY,
-    username VARCHAR(50) NOT NULL,
-    password VARCHAR(50) NOT NULL,
-    role VARCHAR(50) NOT NULL DEFAULT 'user' CHECK(role IN ('user', 'admin'))
+    id SERIAL PRIMARY KEY NOT NULL UNIQUE,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    role VARCHAR(20) NOT NULL DEFAULT 'basic' CHECK(role IN ('basic', 'member' , 'admin'))
 );
 `;
 
