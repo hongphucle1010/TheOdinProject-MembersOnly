@@ -17,6 +17,9 @@
   "main": "app.js",
   "scripts": {
     "build": "node ./configs/populatedb.js",
+    "reset": "node ./configs/resetServer.js && npm run build",
+    "dumb": "node ./test/dumbTest.js",
+    "admin": "node ./configs/createAdmin.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

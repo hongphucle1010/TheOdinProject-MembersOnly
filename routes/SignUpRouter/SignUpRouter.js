@@ -7,7 +7,7 @@ const {
 router.get("/", (req, res) => {
   res.render("signup", {
     title: "Sign Up",
-    message: "Sign up to access the Members Only page.",
+    message: "Sign up to access the ClubHouse page.",
   });
 });
 

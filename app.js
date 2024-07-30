@@ -28,11 +28,13 @@ const logInRouter = require("./routes/LogInRouter/LogInRouter");
 const signUpRouter = require("./routes/SignUpRouter/SignUpRouter");
 const notFoundRouter = require("./routes/404/404");
 const logOutRouter = require("./routes/LogOutRouter/LogOutRouter");
+const messageRouter = require("./routes/MessageRouter/MessageRouter");
 
 // Router Middleware
 app.use("/login", logInRouter);
 app.use("/signup", signUpRouter);
 app.use("/logout", logOutRouter);
+app.use("/message", messageRouter);
 app.use("/", rootRouter);
 app.use("*", notFoundRouter);
 

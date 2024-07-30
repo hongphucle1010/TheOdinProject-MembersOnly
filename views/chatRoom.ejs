@@ -1,0 +1,19 @@
+<form action="/message" method="POST">
+  <input type="text" name="message" />
+  <button type="submit">Send</button>
+</form>
+<% chatMessages.forEach((message) => { %>
+<li>
+  <strong><%- (user.role == 'admin') ? message.username : "Anonymous" %></strong>: <%- message.message %>
+  <small style="margin-left: 1rem"><%= message.created_at %></small>
+  <% if (user.role == 'admin') {%>
+  <form
+    action="/message/delete/<%= message.id %>"
+    method="POST"
+    style="display: inline"
+  >
+    <button type="submit">🗑️</button>
+  </form>
+  <% } %>
+</li>
+<% }) %>

@@ -7,6 +7,12 @@ const pool = new Pool({
   },
 });
 
+/**
+ * 
+ * @param {string} text Query string
+ * @param {Array} params Array of parameters
+ * @returns {Promise<QueryResult<any>> } Query result
+ */
 const query = async (text, params) => {
   try {
     const client = await pool.connect();
@@ -19,7 +25,19 @@ const query = async (text, params) => {
   }
 };
 
+class ModelResponse {
+  /**
+   * @param {any} data
+   * @param {String | Object } error
+   */
+  constructor(data, error) {
+    this.data = data;
+    this.error = error;
+  }
+}
+
 module.exports = {
   pool,
   query,
+  ModelResponse,
 };

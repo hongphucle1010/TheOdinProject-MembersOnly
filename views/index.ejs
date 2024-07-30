@@ -8,12 +8,12 @@
   <body>
     <h1><%- title %></h1>
     <p><%- message %></p>
-    <% if (user){ %>
-    <p>Welcome, <%- user.username %>!</p>
-    <p>Click <a href="/logout">here</a> to log out.</p>
+    <% if (user){ %> 
+      <%- include('chatRoom', { chatMessages: chatMessages, user: user }) %>
+      <p>Click <a href="/logout">here</a> to log out.</p>
     <%} else{ %>
-    <p>Click <a href="/login">here</a> to log in.</p>
-    <p>Click <a href="/signup">here</a> to sign up.</p>
+      <p>Click <a href="/login">here</a> to log in.</p>
+      <p>Click <a href="/signup">here</a> to sign up.</p>
     <% } %>
   </body>
 </html>
